@@ -1,16 +1,228 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="M&T Service Center - Auto repair, oil changes, tires, and more in Oak Hill, WV. Family owned and operated.">
+  <!-- Messenger Chat Plugin (if you want chat right on the site) -->
+  <!-- <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+  <div class="fb-customerchat" attribution="setup_tool" page_id="100092247931598"></div> -->
+
+  <!-- Open Graph / Social Media Preview Tags -->
+  <meta property="og:title" content="M&amp;T Service Center – Oak Hill, WV" />
+  <meta property="og:description" content="Family-owned auto repair: oil changes, tires, brakes, diagnostics & more. Call or message us today!" />
+  <meta property="og:url" content="https://your-mt-page.com/" />
+  <meta property="og:image" content="https://your-mt-page.com/images/social-preview.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Optional: link to make it explicit you're contactable via Messenger -->
+  <link rel="me" href="https://m.me/100092247931598" />
+
+  <link rel="icon" href="images/favicon_text.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>M&T Service Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Prevent lingering tap highlight on mobile */
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+    }
+
+    /* Remove focus outline for mouse/tap but keep for keyboard users */
+    a:focus:not(:focus-visible),
+    button:focus:not(:focus-visible) {
+      outline: none;
+    }
+  </style>
+
+
 </head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <a href="#main" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-white text-black p-2 rounded shadow z-50">
+    Skip to main content
+  </a>
 
-<body>
-  Hello world
-  <script src="script.js"></script>
+  <!-- Header -->
+  <header class="bg-black text-gray-100 py-4 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <!-- Logo -->
+      <div class="flex justify-center sm:justify-start">
+        <img 
+          src="images/images/logo.png" 
+          alt="M&T Service Center Logo" 
+          class="max-h-32 sm:max-h-48 w-auto" />
+      </div>
+      <!-- Info Block -->
+      <div class="text-center sm:text-left space-y-1">
+        <!-- Phone -->
+        <a href="tel:+13042285591" 
+           aria-label="Call M and T Service Center at 304 228 5591"
+           class="flex justify-center sm:justify-start items-center gap-2 text-gray-100 hover:text-red-400 transition">
+          <i class="fas fa-phone-alt text-green-400"></i>
+          (304) 228-5591
+        </a>
+        <!-- Facebook Messenger -->
+        <a href="https://m.me/100092247931598" 
+           target="_blank" 
+           aria-label="Message M&T Service Center on Facebook Messenger"
+           class="flex justify-center sm:justify-start items-center gap-2 text-gray-100 hover:text-blue-400 transition">
+          <i class="fab fa-facebook-messenger text-blue-500"></i>
+          Message us on Facebook
+        </a>
+        <!-- Address -->
+        <a href="https://www.google.com/maps?q=3324+Court+St,+Oak+Hill,+WV+25901" 
+           target="_blank" 
+           aria-label="View 3324 Court Street Oak Hill West Virginia 25901 on Google Maps"
+           class="flex justify-center sm:justify-start items-center gap-2 text-gray-100 hover:text-red-400 transition">
+          <i class="fas fa-map-marker-alt text-red-500"></i>
+          3324 Court St, Oak Hill, WV 25901
+        </a>
+        <!-- Hours -->
+        <div class="flex justify-center sm:justify-start items-center gap-2">
+          <i class="fas fa-clock text-white"></i>
+          <span id="status-text" aria-live="polite" class="font-semibold text-white">Checking hours...</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero + Services Section -->
+    <section class="max-w-6xl mx-auto my-6 px-4 grid grid-cols-1 sm:grid-cols-2 gap-6 items-start">
+      <!-- Hero Image with Caption -->
+      <div>
+        <img 
+          src="https://lh3.googleusercontent.com/p/AF1QipMiBrKHm6QP9HE6ZXvxzlu1TkjdAnzINllP_6Df=s680-w680-h510-rw" 
+          alt="Inside M&T Service Center garage showing tools, car lift, and equipment"
+          class="w-full h-64 object-cover rounded-lg shadow mb-2" />
+        <p class="text-sm text-gray-700 italic text-center">
+          Local Family Owned and Operated since May of 2023
+        </p>
+      </div>
+      <!-- Services List -->
+      <div class="bg-white p-6 rounded-lg shadow h-full">
+        <h2 class="text-2xl font-semibold text-red-600 mb-4">Our Services</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
+          <li class="border-b pb-2">Oil Change</li>
+          <li class="border-b pb-2">Tires</li>
+          <li class="border-b pb-2">Brakes</li>
+          <li class="border-b pb-2">Tune Up</li>
+          <li class="border-b pb-2">Diagnostics</li>
+          <li>And more</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="bg-white max-w-3xl mx-auto my-6 p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-4">Find Us</h2>
+      <div class="w-full h-64 rounded overflow-hidden shadow">
+        <iframe 
+          title="Map showing the location of M&T Service Center in Oak Hill, West Virginia"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.025982189718!2d-81.16303202404064!3d37.98104200158045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884e4b5e4cf81e3b%3A0xd637d222fbf2b219!2s3324%20Court%20St%2C%20Oak%20Hill%2C%20WV%2025901!5e0!3m2!1sen!2sus!4v1718554010861!5m2!1sen!2sus" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+      </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="bg-white max-w-3xl mx-auto my-6 p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-2">Business Hours</h2>
+      <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="bg-white max-w-3xl mx-auto my-6 p-6 rounded-lg shadow">
+      <h2 class="text-2xl font-semibold text-red-600 mb-4">Contact Us</h2>
+      <form action="https://formsubmit.co/chris.r10.sox@gmail.com" method="POST" class="space-y-4">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Contact Submission from M&T Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="thank-you.html">
+        <input type="text" name="name" aria-label="Your Name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500 transition" />
+        <input type="text" name="phone-number" aria-label="Phone Number" placeholder="Phone Number" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500 transition" />
+        <input type="email" name="email" aria-label="Your Email" placeholder="Your Email"  class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500 transition" />
+        <textarea name="message" aria-label="Your Message" rows="5" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-red-500 transition"></textarea>
+        <button type="submit" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition">
+          Send Message
+        </button>
+      </form>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="bg-white max-w-3xl mx-auto my-6 p-6 rounded-lg shadow text-center">
+      <h2 class="text-2xl font-semibold text-red-600 mb-4">What Our Customers Say</h2>
+      <p class="mb-4 text-gray-700">
+        We appreciate your feedback! Check out what others are saying or leave us a review on Google.
+      </p>
+      <a href="https://search.google.com/local/writereview?placeid=ChIJB9Y4RFW_TogRu5thLXBOLa0"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-block bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition">
+        Leave a Review on Google
+      </a>
+
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-300 text-sm py-6 mt-12">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4 sm:gap-0">
+      <p>&copy; 2025 M&T Service Center. All rights reserved.</p>
+      <div class="flex items-center justify-center sm:justify-start gap-4">
+        <a href="tel:+13042285591" class="text-red-500 hover:text-red-400" aria-label="Call M and T Service Center">Call: (304) 228-5591</a>
+        <a href="https://www.google.com/maps?q=3324+Court+St,+Oak+Hill,+WV+25901" target="_blank" class="text-gray-300 hover:text-green-400 text-xl" title="Open in Google Maps" aria-label="Open location of M and T Service Center in Google Maps">
+          <i class="fas fa-map-marker-alt"></i>
+        </a>
+        <a href="https://www.facebook.com/people/M-T-Service-Center/100092247931598/" target="_blank"
+ class="text-gray-300 hover:text-blue-500 text-xl" title="Visit our Facebook page" aria-label="Visit our Facebook page">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </div>
+    <div class="mt-4 text-center text-xs italic text-gray-500">
+      Website handcrafted by Chris Roseblock
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const openHour = 8;
+    const closeHour = 17;
+    function updateShopStatus() {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const day = now.getDay();
+      const statusEl = document.getElementById('status-text');
+      const isWeekday = day >= 1 && day <= 5;
+      const isOpen = isWeekday && currentHour >= openHour && currentHour < closeHour;
+      statusEl.textContent = isOpen ? "Open now · Mon–Fri, 8:00 AM – 5:00 PM" : "Closed · Mon–Fri, 8:00 AM – 5:00 PM";
+      statusEl.classList.remove("text-green-400", "text-red-500");
+      statusEl.classList.add("text-white");
+    }
+    updateShopStatus();
+  </script>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function (e) {
+      const phone = form.querySelector('[name="phone-number"]').value.trim();
+      const email = form.querySelector('[name="email"]').value.trim();
+      const errorMsg = "Please provide either a phone number or an email.";
+      if (!phone && !email) {
+        e.preventDefault();
+        alert(errorMsg);
+      }
+    });
+  </script>
 </body>
-
 </html>
