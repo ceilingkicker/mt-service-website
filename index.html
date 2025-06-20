@@ -29,6 +29,9 @@
     a, button {
       -webkit-tap-highlight-color: transparent;
       -webkit-touch-callout: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     /* Remove focus outline for mouse/tap but keep for keyboard users */
@@ -36,7 +39,15 @@
     button:focus:not(:focus-visible) {
       outline: none;
     }
+
+    /* Optional: prevent blue flash on iOS buttons */
+    button, input, textarea {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
   </style>
+
 
 
 </head>
